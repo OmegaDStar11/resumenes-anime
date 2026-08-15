@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resúmenes de Anime</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Transcripciones & Resúmenes de Anime</h1>
+  </header>
+
+  <div class="container">
+    <nav class="sidebar">
+      <ul>
+        <li><button onclick="cargarResumen(0)">Death Note</button></li>
+        <li><button onclick="cargarResumen(1)">Resumen Variado (Compilación)</button></li>
+        <li><button onclick="cargarResumen(2)">Sword Art Online (SAO)</button></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h2 id="titulo-anime">Selecciona un Anime</h2>
+      <div id="texto-transcripcion">
+        <p>Selecciona una opción del menú lateral para leer la transcripción completa del resumen.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
