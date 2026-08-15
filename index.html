@@ -3,30 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resúmenes de Anime</title>
+  <title>Resúmenes & Transcripciones de Anime</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Iconos FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Transcripciones & Resúmenes de Anime</h1>
+  <header class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-film"></i>
+      <span>Anime<strong>Summaries</strong></span>
+    </div>
+    <span class="tagline">Biblioteca de Transcripciones y Resúmenes</span>
   </header>
 
-  <div class="container">
-    <nav class="sidebar">
-      <ul>
-        <li><button onclick="cargarResumen(0)">Death Note</button></li>
-        <li><button onclick="cargarResumen(1)">Resumen Variado (Compilación)</button></li>
-        <li><button onclick="cargarResumen(2)">Sword Art Online (SAO)</button></li>
+  <div class="main-container">
+    <aside class="sidebar">
+      <h3><i class="fa-solid fa-list"></i> Lista de Animes</h3>
+      <ul id="menu-animes">
+        <!-- Se genera dinámicamente desde JS -->
       </ul>
-    </nav>
+    </aside>
 
-    <main class="content">
-      <h2 id="titulo-anime">Selecciona un Anime</h2>
-      <div id="texto-transcripcion">
-        <p>Selecciona una opción del menú lateral para leer la transcripción completa del resumen.</p>
+    <main class="content-panel">
+      <div id="welcome-screen" class="card welcome">
+        <h2><i class="fa-solid fa-circle-info"></i> Selecciona un resumen</h2>
+        <p>Haz clic en cualquiera de las opciones del menú lateral para cargar la transcripción detallada y acceder al enlace del video original.</p>
       </div>
+
+      <article id="anime-card" class="card anime-detail hidden">
+        <div class="card-header">
+          <div class="header-info">
+            <span class="badge" id="anime-tag">Categoría</span>
+            <h1 id="anime-title">Título del Anime</h1>
+          </div>
+          <a id="anime-video-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-video">
+            <i class="fa-brands fa-youtube"></i> Ver Video Original
+          </a>
+        </div>
+
+        <div class="card-meta">
+          <span><i class="fa-regular fa-clock"></i> <span id="anime-duration">--:--</span></span>
+          <span><i class="fa-solid fa-user"></i> Transcripción por: <strong id="anime-author">Canal de YouTube</strong></span>
+        </div>
+
+        <hr class="divider">
+
+        <div class="card-body">
+          <h2><i class="fa-solid fa-align-left"></i> Transcripción y Resumen Detallado</h2>
+          <div id="anime-content" class="text-block"></div>
+        </div>
+      </article>
     </main>
   </div>
+
+  <footer>
+    <p>&copy; 2026 OmegaDStar11 - Proyecto de Resúmenes de Anime</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
