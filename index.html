@@ -3,63 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resúmenes & Transcripciones de Anime</title>
+  <title>AnimeSummaries - Biblioteca de Transcripciones</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Iconos FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+  <!-- Header / Barra de Navegación -->
   <header class="navbar">
     <div class="logo">
       <i class="fa-solid fa-film"></i>
       <span>Anime<strong>Summaries</strong></span>
     </div>
-    <span class="tagline">Biblioteca de Transcripciones y Resúmenes</span>
+    <p class="subtitle">Biblioteca de Transcripciones y Resúmenes</p>
   </header>
 
-  <div class="main-container">
+  <!-- Contenedor Principal Grid -->
+  <main class="layout-container">
+
+    <!-- Panel Lateral: Navegación -->
     <aside class="sidebar">
-      <h3><i class="fa-solid fa-list"></i> Lista de Animes</h3>
-      <ul id="menu-animes">
-        <!-- Se genera dinámicamente desde JS -->
-      </ul>
+      <h2><i class="fa-solid fa-list-ul"></i> Lista de Animes</h2>
+      <nav class="anime-menu">
+        <button class="anime-btn active" data-target="recopilacion">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Recopilación: Ella no quiere vivir...</span>
+        </button>
+        <button class="anime-btn" data-target="sao">
+          <i class="fa-solid fa-gamepad"></i>
+          <span>Sword Art Online (Parodia)</span>
+        </button>
+        <button class="anime-btn" data-target="deathnote">
+          <i class="fa-solid fa-book-skull"></i>
+          <span>Death Note en 5 minutos</span>
+        </button>
+      </nav>
     </aside>
 
-    <main class="content-panel">
-      <div id="welcome-screen" class="card welcome">
-        <h2><i class="fa-solid fa-circle-info"></i> Selecciona un resumen</h2>
-        <p>Haz clic en cualquiera de las opciones del menú lateral para cargar la transcripción detallada y acceder al enlace del video original.</p>
-      </div>
+    <!-- Área de Contenido Principal -->
+    <section class="content-area">
 
-      <article id="anime-card" class="card anime-detail hidden">
+      <!-- ================= RECOPILACIÓN ================= -->
+      <article id="recopilacion" class="anime-card active">
         <div class="card-header">
-          <div class="header-info">
-            <span class="badge" id="anime-tag">Categoría</span>
-            <h1 id="anime-title">Título del Anime</h1>
-          </div>
-          <a id="anime-video-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-video">
+          <span class="badge">Recopilación (4 Animes)</span>
+          <h1>Ella no quiere vivir pero pierde la memoria</h1>
+          <a href="https://www.youtube.com" target="_blank" class="yt-link">
             <i class="fa-brands fa-youtube"></i> Ver Video Original
           </a>
+          <div class="meta-info">
+            <span><i class="fa-regular fa-clock"></i> 42:33 min</span>
+            <span><i class="fa-regular fa-user"></i> Transcripción por: Canal de YouTube</span>
+          </div>
         </div>
 
-        <div class="card-meta">
-          <span><i class="fa-regular fa-clock"></i> <span id="anime-duration">--:--</span></span>
-          <span><i class="fa-solid fa-user"></i> Transcripción por: <strong id="anime-author">Canal de YouTube</strong></span>
+        <div class="card-controls">
+          <button class="toggle-btn" onclick="toggleSummary('recopilacion')">
+            <span class="btn-text">Ver Transcripciones Integrales</span>
+            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+          </button>
         </div>
 
-        <hr class="divider">
+        <div class="summary-collapsible" id="collapsible-recopilacion">
+          <div class="inner-content">
 
-        <div class="card-body">
-          <h2><i class="fa-solid fa-align-left"></i> Transcripción y Resumen Detallado</h2>
-          <div id="anime-content" class="text-block"></div>
+            <!-- Sub-sección 1 -->
+            <div class="sub-anime">
+              <h3>1. Debu to Love to Ayamachi to! (Yume Kokoda)</h3>
+              <p>Yume Kokoda es una chica con sobrepeso que, harta de su vida, decide atentar contra sí misma saltando de un cuarto piso[cite: 5]. Milagrosamente sobrevive, pero despierta en el hospital con amnesia retrógrada[cite: 5]. Sin recuerdos de sus traumas pasados, su autoestima cambia radicalmente: ahora se ve increíble y llena de energía[cite: 5]. Al reincorporarse a su trabajo corporativo, revoluciona el ambiente con su positivismo, propone ideas para la empresa y defiende activamente a sus compañeras de trabajo contra las críticas y chismes[cite: 5]. Mientras tanto, investiga extraños detalles de su accidente e intenta entablar amistad con un misterioso chico guapo que conoce en el parque[cite: 5].</p>
+            </div>
+
+            <!-- Sub-sección 2 -->
+            <div class="sub-anime">
+              <h3>2. Bukiyou na Senpai (Azusa Kanagawa & Yu Kamegawa)</h3>
+              <p>Azusa Kanagawa es una aclamada e intachable líder de marketing, temida en la oficina por su tono estricto, gritón y distante[cite: 5]. Sin embargo, en realidad sufre de una terrible ansiedad social e incapacidad para comunicarse[cite: 5]. Las cosas cambian cuando el gerente le asigna capacitar a Yu Kamegawa, un brillante y educado novato[cite: 5]. A pesar de los constantes malentendidos y de que Azusa pasa noches enteras leyendo libros de superación personal para no incomodarlo[cite: 5], Yu nota rápidamente su genuina amabilidad y dedicación, defendiéndola frente a los chismes despectivos de otras empleadas de la oficina[cite: 5].</p>
+            </div>
+
+            <!-- Sub-sección 3 -->
+            <div class="sub-anime">
+              <h3>3. Taiyou yori mo Mabushii Hoshi (Ihwata & Koki)</h3>
+              <p>Ihwata es una chica de gran estatura que desde la primaria ha estado enamorada en secreto de Koki[cite: 5], un chico al que solía defender y a quien le bebía la leche del almuerzo para ayudarlo[cite: 5]. Con el paso de los años, Koki da un enorme estirón y se convierte en uno de los estudiantes más populares y atractivos[cite: 5], mientras Ihwata siente que se distancian[cite: 5]. Sin embargo, al coordinar juntos el festival escolar y los exámenes para ingresar a la misma preparatoria, ambos redescubren su cercanía en una tierna historia de reencuentro y amor juvenil[cite: 5].</p>
+            </div>
+
+            <!-- Sub-sección 4 -->
+            <div class="sub-anime">
+              <h3>4. Kikaijikake no Marie (Arthur & Mary Evans)</h3>
+              <p>Arthur es el rico e inteligente heredero de una gran corporación, pero vive acosado por constantes intentos de asesinato planeados por su propia familia, lo que lo convirtió en un misántropo resentido que aborrece a la gente[cite: 5]. Para protegerlo, contrata a Mary Evans, una campeona de artes marciales que se hace pasar por una robot sirvienta sin emociones[cite: 5] para saldar las deudas de sus padres[cite: 5]. A pesar de los ataques de su envidioso hermano Maynard, Mary protege la vida de Arthur combatiendo a los agresores y fingiendo ser de metal, encendiendo un sentimiento protector en Arthur[cite: 5].</p>
+            </div>
+
+          </div>
         </div>
       </article>
-    </main>
-  </div>
 
-  <footer>
-    <p>&copy; 2026 OmegaDStar11 - Proyecto de Resúmenes de Anime</p>
-  </footer>
+      <!-- ================= SWORD ART ONLINE ================= -->
+      <article id="sao" class="anime-card">
+        <div class="card-header">
+          <span class="badge">Resumen Cómico / Parodia</span>
+          <h1>Sword Art Online (Resumen Loquendo/Parodia)</h1>
+          <a href="https://www.youtube.com" target="_blank" class="yt-link">
+            <i class="fa-brands fa-youtube"></i> Ver Video Original
+          </a>
+          <div class="meta-info">
+            <span><i class="fa-regular fa-clock"></i> 04:36 min</span>
+            <span><i class="fa-regular fa-user"></i> Transcripción por: Canal de YouTube</span>
+          </div>
+        </div>
+
+        <div class="card-controls">
+          <button class="toggle-btn" onclick="toggleSummary('sao')">
+            <span class="btn-text">Ver Transcripción Completa</span>
+            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+          </button>
+        </div>
+
+        <div class="summary-collapsible" id="collapsible-sao">
+          <div class="inner-content">
+            <div class="sub-anime">
+              <h3>Arco Aincrad & ALfheim Online</h3>
+              <p>Satanás/Kayaba encierra a miles de jugadores en Sword Art Online, amenazando con que si mueren en el juego, mueren en la vida real[cite: 4]. Kirito se proclama "El Espadachín Negro" mientras ignora a Klein y recluta aliados[cite: 4]. Tras casarse dentro del juego con Asuna y adoptar a Yui[cite: 4], Kirito descubre mediante hacks/deducciones que el líder del gremio es Kayaba Akihiko[cite: 4]. Kirito vence al jefe usando hacks de protagonista y completa el juego[cite: 4]. Poco después, viaja a ALfheim Online para rescatar a Asuna de un nuevo villano, acompañado por su hermana Suguha, culminando con Kirito salvando el día antes de volver a jugar SAO[cite: 4].</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ================= DEATH NOTE ================= -->
+      <article id="deathnote" class="anime-card">
+        <div class="card-header">
+          <span class="badge">Anime en 5 Minutos</span>
+          <h1>Death Note</h1>
+          <a href="https://www.youtube.com" target="_blank" class="yt-link">
+            <i class="fa-brands fa-youtube"></i> Ver Video Original
+          </a>
+          <div class="meta-info">
+            <span><i class="fa-regular fa-clock"></i> 07:42 min</span>
+            <span><i class="fa-regular fa-user"></i> Transcripción por: Anime en 5 Minutos</span>
+          </div>
+        </div>
+
+        <div class="card-controls">
+          <button class="toggle-btn" onclick="toggleSummary('deathnote')">
+            <span class="btn-text">Ver Transcripción Completa</span>
+            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+          </button>
+        </div>
+
+        <div class="summary-collapsible" id="collapsible-deathnote">
+          <div class="inner-content">
+            <div class="sub-anime">
+              <h3>Resumen Rápido: Kira vs. L, Mello & Near</h3>
+              <p>Light Yagami encuentra la Death Note del shinigami Ryuk y comienza a eliminar criminales bajo el alias "Kira"[cite: 6]. El genial detective L tiende trampas estratégicas para delimitar su ubicación en Japón[cite: 6]. Con la entrada de Misa Amane (segunda Kira) y la intervención de la shinigami Rem, Light logra ejecutar un elaborado plan para eliminar a L[cite: 6]. Años más tarde, los sucesores de L, Mello y Near, acorralan a Light y a su sustituto Teru Mikami al reemplazar la libreta real, exponiendo a Light y provocando su trágico final a manos de Ryuk[cite: 6].</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
