@@ -43,7 +43,7 @@
     <!-- Área de Contenido Principal -->
     <section class="content-area">
 
-      <!-- ================= RECOPILACIÓN ================= -->
+      <!-- RECOPILACIÓN -->
       <article id="recopilacion" class="anime-card active">
         <div class="card-header">
           <span class="badge">Recopilación (4 Animes)</span>
@@ -66,36 +66,27 @@
 
         <div class="summary-collapsible" id="collapsible-recopilacion">
           <div class="inner-content">
-
-            <!-- Sub-sección 1 -->
             <div class="sub-anime">
               <h3>1. Debu to Love to Ayamachi to! (Yume Kokoda)</h3>
               <p>Yume Kokoda es una chica con sobrepeso que, harta de su vida, decide atentar contra sí misma saltando de un cuarto piso[cite: 5]. Milagrosamente sobrevive, pero despierta en el hospital con amnesia retrógrada[cite: 5]. Sin recuerdos de sus traumas pasados, su autoestima cambia radicalmente: ahora se ve increíble y llena de energía[cite: 5]. Al reincorporarse a su trabajo corporativo, revoluciona el ambiente con su positivismo, propone ideas para la empresa y defiende activamente a sus compañeras de trabajo contra las críticas y chismes[cite: 5]. Mientras tanto, investiga extraños detalles de su accidente e intenta entablar amistad con un misterioso chico guapo que conoce en el parque[cite: 5].</p>
             </div>
-
-            <!-- Sub-sección 2 -->
             <div class="sub-anime">
               <h3>2. Bukiyou na Senpai (Azusa Kanagawa & Yu Kamegawa)</h3>
               <p>Azusa Kanagawa es una aclamada e intachable líder de marketing, temida en la oficina por su tono estricto, gritón y distante[cite: 5]. Sin embargo, en realidad sufre de una terrible ansiedad social e incapacidad para comunicarse[cite: 5]. Las cosas cambian cuando el gerente le asigna capacitar a Yu Kamegawa, un brillante y educado novato[cite: 5]. A pesar de los constantes malentendidos y de que Azusa pasa noches enteras leyendo libros de superación personal para no incomodarlo[cite: 5], Yu nota rápidamente su genuina amabilidad y dedicación, defendiéndola frente a los chismes despectivos de otras empleadas de la oficina[cite: 5].</p>
             </div>
-
-            <!-- Sub-sección 3 -->
             <div class="sub-anime">
               <h3>3. Taiyou yori mo Mabushii Hoshi (Ihwata & Koki)</h3>
               <p>Ihwata es una chica de gran estatura que desde la primaria ha estado enamorada en secreto de Koki[cite: 5], un chico al que solía defender y a quien le bebía la leche del almuerzo para ayudarlo[cite: 5]. Con el paso de los años, Koki da un enorme estirón y se convierte en uno de los estudiantes más populares y atractivos[cite: 5], mientras Ihwata siente que se distancian[cite: 5]. Sin embargo, al coordinar juntos el festival escolar y los exámenes para ingresar a la misma preparatoria, ambos redescubren su cercanía en una tierna historia de reencuentro y amor juvenil[cite: 5].</p>
             </div>
-
-            <!-- Sub-sección 4 -->
             <div class="sub-anime">
               <h3>4. Kikaijikake no Marie (Arthur & Mary Evans)</h3>
               <p>Arthur es el rico e inteligente heredero de una gran corporación, pero vive acosado por constantes intentos de asesinato planeados por su propia familia, lo que lo convirtió en un misántropo resentido que aborrece a la gente[cite: 5]. Para protegerlo, contrata a Mary Evans, una campeona de artes marciales que se hace pasar por una robot sirvienta sin emociones[cite: 5] para saldar las deudas de sus padres[cite: 5]. A pesar de los ataques de su envidioso hermano Maynard, Mary protege la vida de Arthur combatiendo a los agresores y fingiendo ser de metal, encendiendo un sentimiento protector en Arthur[cite: 5].</p>
             </div>
-
           </div>
         </div>
       </article>
 
-      <!-- ================= SWORD ART ONLINE ================= -->
+      <!-- SWORD ART ONLINE -->
       <article id="sao" class="anime-card">
         <div class="card-header">
           <span class="badge">Resumen Cómico / Parodia</span>
@@ -126,7 +117,7 @@
         </div>
       </article>
 
-      <!-- ================= DEATH NOTE ================= -->
+      <!-- DEATH NOTE -->
       <article id="deathnote" class="anime-card">
         <div class="card-header">
           <span class="badge">Anime en 5 Minutos</span>
@@ -159,6 +150,34 @@
 
     </section>
   </main>
+
+  <!-- WIDGET CHATBOT -->
+  <div class="chat-widget">
+    <button id="chat-toggle" class="chat-toggle-btn">
+      <i class="fa-solid fa-robot"></i>
+    </button>
+    
+    <div id="chat-window" class="chat-window hidden">
+      <div class="chat-header">
+        <div class="chat-title">
+          <i class="fa-solid fa-bot"></i>
+          <span>Asistente Anime</span>
+        </div>
+        <button id="chat-close" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      
+      <div id="chat-messages" class="chat-messages">
+        <div class="message bot">
+          ¡Hola! Soy tu asistente de resúmenes. Pregúntame sobre cualquier anime de la lista o dime qué género buscas.
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." autocomplete="off">
+        <button id="chat-send"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
