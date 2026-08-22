@@ -1,4 +1,4 @@
-// Cambio de pestañas
+// Cambio de pestañas desde la barra lateral
 document.querySelectorAll('.anime-btn').forEach(button => {
   button.addEventListener('click', () => {
     document.querySelectorAll('.anime-btn').forEach(btn => btn.classList.remove('active'));
@@ -10,7 +10,7 @@ document.querySelectorAll('.anime-btn').forEach(button => {
   });
 });
 
-// Toggle Desplegable
+// Función para desplegar y colapsar resúmenes
 function toggleSummary(cardId) {
   const card = document.getElementById(cardId);
   const collapsible = card.querySelector('.summary-collapsible');
@@ -27,7 +27,7 @@ function toggleSummary(cardId) {
   }
 }
 
-// LÓGICA DEL CHATBOT
+// LÓGICA DEL CHATBOT INTERACTIVO
 const chatToggle = document.getElementById('chat-toggle');
 const chatWindow = document.getElementById('chat-window');
 const chatClose = document.getElementById('chat-close');
@@ -35,27 +35,27 @@ const chatInput = document.getElementById('chat-input');
 const chatSend = document.getElementById('chat-send');
 const chatMessages = document.getElementById('chat-messages');
 
+// Abrir/Cerrar Ventana
 chatToggle.addEventListener('click', () => chatWindow.classList.toggle('hidden'));
 chatClose.addEventListener('click', () => chatWindow.classList.add('hidden'));
 
-chatSend.addEventListener('click', sendMessage);
+// Enviar mensaje con clic o tecla Enter
+chatSend.addEventListener('click', processMessage);
 chatInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') sendMessage();
+  if (e.key === 'Enter') processMessage();
 });
 
-function sendMessage() {
+function processMessage() {
   const text = chatInput.value.trim();
   if (!text) return;
 
-  // Renderizar mensaje del usuario
   appendMessage(text, 'user');
   chatInput.value = '';
 
-  // Respuesta simulada del bot
   setTimeout(() => {
     const response = getBotResponse(text.toLowerCase());
     appendMessage(response, 'bot');
-  }, 400);
+  }, 350);
 }
 
 function appendMessage(text, sender) {
@@ -66,16 +66,24 @@ function appendMessage(text, sender) {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
+// Respuestas Inteligentes
 function getBotResponse(input) {
-  if (input.includes('sao') || input.includes('sword art online')) {
-    return 'SAO trata sobre Kirito atrapado en un juego de realidad virtual donde morir en el juego implica morir en la vida real. ¡Revisa la sección "Sword Art Online" en el menú!';
-  } else if (input.includes('death note') || input.includes('kira')) {
-    return 'Death Note narra el duelo psicológico entre Light Yagami (Kira) y el detective L. Encuentras la transcripción completa en la pestaña "Death Note".';
-  } else if (input.includes('recopilacion') || input.includes('romance') || input.includes('comedia')) {
-    return 'La recopilación incluye 4 historias interesantes: Debu to Love, Bukiyou na Senpai, Taiyou yori mo Mabushii Hoshi y Kikaijikake no Marie.';
-  } else if (input.includes('hola') || input.includes('buenas')) {
-    return '¡Hola! ¿En qué puedo ayudarte hoy? Escribe el nombre de un anime o un tema.';
-  } else {
-    return 'Puedo ayudarte a buscar entre las transcripciones. Prueba preguntando por "SAO", "Death Note" o "Recopilación".';
+  if (input.includes('sao') || input.includes('sword art') || input.includes('kirito')) {
+    return 'Sword Art Online es un resumen loquendo/parodia. Kirito queda atrapado en el juego VRMMO Aincrad y debe superar los pisos para salir libre.';
+  } 
+  else if (input.includes('death note') || input.includes('kira') || input.includes('light')) {
+    return 'Death Note relata la batalla táctica entre Light Yagami (Kira) y el detective L tras encontrar la libreta de la muerte de Ryuk.';
+  } 
+  else if (input.includes('recopilacion') || input.includes('memoria') || input.includes('romance')) {
+    return 'La recopilación de 4 animes contiene historias como "Debu to Love" (Yume supera sus miedos al perder la memoria) y "Bukiyou na Senpai" (ansiedad social en la oficina).';
+  } 
+  else if (input.includes('hola') || input.includes('buenas') || input.includes('hey')) {
+    return '¡Saludos! ¿Qué anime o resumen te gustaría consultar hoy?';
+  } 
+  else if (input.includes('quien eres') || input.includes('creador')) {
+    return 'Soy el bot interactivo desarrollado para la plataforma Omega D Star Enterprise.';
+  } 
+  else {
+    return 'No entendí bien tu consulta. Prueba escribiendo: "SAO", "Death Note", "Recopilacion" o "Hola".';
   }
 }
